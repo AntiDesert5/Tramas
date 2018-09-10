@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Tramas</string>
+    <string name="IngMens">Ingrese mensaje a codificar</string>
+    <string name="Aceptar">Aceptar</string>
+    <string name="ETX">Ingrese ETX en binario</string>
+    <string name="Cabecera">Ingrese Cabecera en binario</string>
+    <string name="SYN">Ingrese SYN en binario</string>
+    <string name="SOH">Ingrese SOH en binario</string>
+    <string name="STX">Ingrese STX en binario</string>
+    <string name="CRC">Ingrese CRC en binario</string>
+</resources>
