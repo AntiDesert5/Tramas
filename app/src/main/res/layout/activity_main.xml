@@ -18,48 +18,70 @@
             android:id="@+id/IngValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/IngMens" />
+            android:hint="@string/IngMens"
+            android:maxLength="20"/>
         <EditText
             android:id="@+id/IngCRC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/CRC"/>
+            android:hint="@string/CRC"
+            android:inputType="number"
+            android:maxLength="16"/>
         <EditText
             android:id="@+id/IngETX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/ETX"/>
+            android:hint="@string/ETX"
+            android:inputType="number"
+            android:maxLength="8"/>
         <EditText
             android:id="@+id/IngCabecera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/Cabecera"/>
+            android:hint="@string/Cabecera"
+            android:inputType="numberDecimal"
+            android:maxLength="8"/>
         <EditText
             android:id="@+id/SYN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/SYN"/>
+            android:hint="@string/SYN"
+            android:inputType="numberDecimal"
+            android:maxLength="8"/>
         <EditText
             android:id="@+id/IngSOH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/SOH"/>
+            android:hint="@string/SOH"
+            android:inputType="numberDecimal"
+            android:maxLength="8"/>
         <EditText
             android:id="@+id/IngSTX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/STX"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal"
+            android:maxLength="8"/>
         <Button
             android:id="@+id/Aceptar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Aceptar"/>
+            android:text="@string/Aceptar"
+            android:inputType="numberDecimal"/>
 
         <EditText
             android:id="@+id/MostValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:enabled="false"
+            />
+        <EditText
+            android:id="@+id/MostValor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:enabled="false"
             />
 
     </LinearLayout>
