@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for (int i = 0; i < tam; i++) {
                 System.out.print(Arrtotal[i]);
 
+
             }
             String ga = String.valueOf(Arrtotal);
             System.out.println("valor :" + ga);
