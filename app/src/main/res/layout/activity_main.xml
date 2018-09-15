@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,6 +82,7 @@
             android:inputType="numberDecimal"
             android:enabled="false"
             />
+
         <EditText
             android:id="@+id/MostValor3"
             android:layout_width="wrap_content"
