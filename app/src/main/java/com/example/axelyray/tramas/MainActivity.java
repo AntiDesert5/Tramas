@@ -99,33 +99,65 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return val;
     }
 
-    public String BinCabecera(){
+    public String BinCabecera(View view){
+        //System.out.println("HEXADECIMAL11: "+val);
+        String val=" ";
         EditText IngCabecera=(EditText)findViewById(R.id.IngCabecera);
         String DatCabecera=IngCabecera.getText().toString();
-        //opBinario
-        int dec=Integer.parseInt(DatCabecera,2);
-        String val=Integer.toHexString(dec).toUpperCase();
-        //System.out.println("HEXADECIMAL11: "+val);
+        boolean a=checaTFCRC(view,IngCabecera,DatCabecera);
+        if(IngCabecera.getText().toString().length()==8) {
+            //
+            if(a){
+                int dec = Integer.parseInt(DatCabecera, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+                System.out.println("Funciona");
+            }else{
+                val="00";
+            }
+        }
+        else{
+            IngCabecera.setText("00000000");
+        }
         return val;
     }
 
-    public String BinSYN(){
+    public String BinSYN(View view){
+        String val=" ";
         EditText IngSYN=(EditText)findViewById(R.id.SYN);
         String DatSYN=IngSYN.getText().toString();
-        //opBinario
-        int dec=Integer.parseInt(DatSYN,2);
-        String val=Integer.toHexString(dec).toUpperCase();
-        //System.out.println("HEXADECIMAL11: "+val);
+        boolean a=checaTFCRC(view,IngSYN,DatSYN);
+        if(IngSYN.getText().toString().length()==8) {
+            if(a){
+                int dec = Integer.parseInt(DatSYN, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+                System.out.println("Funciona");
+            }else{
+                val="00";
+            }
+        }
+        else{
+            IngSYN.setText("00000000");
+        }
         return val;
     }
 
-    public String BinSOH(){
+    public String BinSOH(View view){
+        String val=" ";
         EditText IngSOH=(EditText)findViewById(R.id.IngSOH);
         String DatSOH=IngSOH.getText().toString();
-        //opBinario
-        int dec=Integer.parseInt(DatSOH,2);
-        String val=Integer.toHexString(dec).toUpperCase();
-        //System.out.println("HEXADECIMAL11: "+val);
+        boolean a=checaTFCRC(view,IngSOH,DatSOH);
+        if(IngSOH.getText().toString().length()==8) {
+            if(a){
+                int dec = Integer.parseInt(DatSOH, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+                System.out.println("Funciona");
+            }else{
+                val="00";
+            }
+        }
+        else{
+            IngSOH.setText("00000000");
+        }
         return val;
     }
 
@@ -157,9 +189,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String RCRC=BinCRC(view);
             //BinETX(view);
             String RETX=BinETX(view);
-            String RCabecera=BinCabecera();
-            String RBinSYN =BinSYN();
-            String RSOH =BinSOH();
+            String RCabecera=BinCabecera(view);
+            String RBinSYN =BinSYN(view);
+            String RSOH =BinSOH(view);
             String RSTX =BinSTX();
 
             String cade = IngValor.getText().toString();
