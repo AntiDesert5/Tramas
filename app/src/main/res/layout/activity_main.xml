@@ -83,6 +83,13 @@
             android:inputType="numberDecimal"
             android:enabled="false"
             />
+        <EditText
+            android:id="@+id/MostValor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:enabled="false"
+            />
 
     </LinearLayout>
 

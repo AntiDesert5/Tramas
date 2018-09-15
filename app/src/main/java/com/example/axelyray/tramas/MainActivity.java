@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
         int i=0;
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         EditText MostValor= (EditText)findViewById(R.id.MostValor);
         EditText MostValor2 =(EditText)findViewById(R.id.MostValor2);
+        EditText MostValor3 =(EditText)findViewById(R.id.MostValor3);
         EditText IngValor = (EditText)findViewById(R.id.IngValor);
 
         if(IngValor.getText().toString().isEmpty()){
@@ -134,10 +136,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             }
-            String ga = String.valueOf(Arrtotal);
-            System.out.println("valor :" + ga);
+
+            String ga =Arrays.toString(Arrtotal);
+
+            System.out.println("Arreglo total: "+Arrays.toString(Arrtotal));
             MostValor.setText("Valor de STX: "+RSTX+"\n\t"+"Valor de SOH: "+RSOH+"\n");
             MostValor2.setText("Valor de SYN: "+RBinSYN+"\n"+"Valor de Cabecera: "+RCabecera);
+            MostValor3.setText("Texto:"+ga);
             cade = null;
 
         }
