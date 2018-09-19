@@ -1,102 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="d"
     tools:context=".MainActivity">
+
     <LinearLayout
+        android:id="@+id/trama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/trama"
         android:gravity="center"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <EditText
             android:id="@+id/IngValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/IngMens"
-            android:maxLength="20"/>
+            android:inputType="textAutoComplete"
+            android:maxLength="10" />
+
         <EditText
             android:id="@+id/IngCRC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:digits="01"
             android:hint="@string/CRC"
             android:inputType="number"
-            android:maxLength="16"/>
+            android:maxLength="16" />
+
         <EditText
             android:id="@+id/IngETX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:digits="01"
             android:hint="@string/ETX"
             android:inputType="number"
-            android:maxLength="8"/>
+            android:maxLength="8" />
+
         <EditText
             android:id="@+id/IngCabecera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:digits="01"
             android:hint="@string/Cabecera"
             android:inputType="numberDecimal"
-            android:maxLength="8"/>
+            android:maxLength="8" />
+
         <EditText
             android:id="@+id/SYN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:digits="01"
             android:hint="@string/SYN"
             android:inputType="numberDecimal"
-            android:maxLength="8"/>
+            android:maxLength="8" />
+
         <EditText
             android:id="@+id/IngSOH"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:digits="01"
             android:hint="@string/SOH"
             android:inputType="numberDecimal"
-            android:maxLength="8"/>
+            android:maxLength="8" />
+
         <EditText
             android:id="@+id/IngSTX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:digits="01"
             android:hint="@string/STX"
             android:inputType="numberDecimal"
-            android:maxLength="8"/>
+            android:maxLength="8" />
+
         <Button
             android:id="@+id/Aceptar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#00910e"
+            android:inputType="numberDecimal"
             android:text="@string/Aceptar"
-            android:inputType="numberDecimal"/>
+            android:textColor="#fff"/>
 
-        <EditText
+        <TextView
             android:id="@+id/MostValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
-            />
-        <EditText
+            android:inputType="numberDecimal"
+            android:textColor="#000" />
+
+        <TextView
             android:id="@+id/MostValor2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
-            />
+            android:inputType="numberDecimal"
+            android:textColor="#000" />
 
-        <EditText
+        <TextView
             android:id="@+id/MostValor3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
-            />
-        <EditText
+            android:inputType="numberDecimal"
+            android:textColor="#000" />
+
+        <TextView
             android:id="@+id/MostValor4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
-            />
+            android:inputType="numberDecimal"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/MostValor5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:inputType="numberDecimal"
+            android:textColor="#000" />
 
     </LinearLayout>
 

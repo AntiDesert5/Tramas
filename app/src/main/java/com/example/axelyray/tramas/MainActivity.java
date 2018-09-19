@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -88,12 +89,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText IngETX=(EditText)findViewById(R.id.IngETX);
         String DatETX = IngETX.getText().toString();
         boolean a=checaTF(view,IngETX,DatETX);
-        if(a){
-            int dec=Integer.parseInt(DatETX,2);
-            val=Integer.toHexString(dec).toUpperCase();
-            System.out.println("Valores buenos: "+val);
-        }else{
-            val="00";
+        if(IngETX.getText().toString().length()==8) {
+            if (a) {
+                int dec = Integer.parseInt(DatETX, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+                System.out.println("Valores buenos: " + val);
+            } else {
+                val = "00";
+            }
+        }else {
+            IngETX.setText("00000000");
         }
         //opBinario
         return val;
@@ -161,14 +166,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return val;
     }
 
-    public String BinSTX(){
+    public String BinSTX(View view){
+        ////*********
+        String val=" ";
         EditText IngSTX=(EditText)findViewById(R.id.IngSTX);
         String DatSTX=IngSTX.getText().toString();
-        //opBinario
-        int dec=Integer.parseInt(DatSTX,2);
-        String val=Integer.toHexString(dec).toUpperCase();
-        //System.out.println("HEXADECIMAL11: "+val);
-        return  val;
+        boolean a=checaTFCRC(view,IngSTX,DatSTX);
+        if(IngSTX.getText().toString().length()==8) {
+            if(a){
+                int dec = Integer.parseInt(DatSTX, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+            }else{
+                val="00";
+            }
+        }
+        else{
+            IngSTX.setText("00000000");
+        }
+        return val;
+        //**********
+
     }
 
     @Override
@@ -177,10 +194,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String Arrtotal[];
 
-        EditText MostValor= (EditText)findViewById(R.id.MostValor);
-        EditText MostValor2 =(EditText)findViewById(R.id.MostValor2);
-        EditText MostValor3 =(EditText)findViewById(R.id.MostValor3);
-        EditText MostValor4 =(EditText)findViewById(R.id.MostValor4);
+        TextView MostValor= (TextView) findViewById(R.id.MostValor);
+        TextView MostValor2 =(TextView) findViewById(R.id.MostValor2);
+        TextView MostValor3 =(TextView) findViewById(R.id.MostValor3);
+        TextView MostValor4 =(TextView) findViewById(R.id.MostValor4);
+        TextView MostValor5 =(TextView) findViewById(R.id.MostValor5);
         EditText IngValor = (EditText)findViewById(R.id.IngValor);
 
         if(IngValor.getText().toString().isEmpty()){
@@ -192,7 +210,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String RCabecera=BinCabecera(view);
             String RBinSYN =BinSYN(view);
             String RSOH =BinSOH(view);
-            String RSTX =BinSTX();
+            String RSTX =BinSTX(view);
 
             String cade = IngValor.getText().toString();
             int tam = cade.length();
@@ -212,10 +230,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String hexa = Integer.toHexString(b).toUpperCase();
                 Arrtotal[i] = hexa;
             }
+            String datosArray = "";
+            for (String elemento: Arrtotal) {
+                datosArray += elemento + ",";
+            }
 
+
+            System.out.println(datosArray);
             for (int i = 0; i < tam; i++) {
                 System.out.print(Arrtotal[i]);
-
 
             }
 
@@ -223,13 +246,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             System.out.println("Arreglo total: "+Arrays.toString(Arrtotal));
 
-            MostValor.setText("Valor de STX: "+RSTX+"\n\t"+"Valor de SOH: "+RSOH+"\n");
-            MostValor2.setText("Valor de SYN: "+RBinSYN+"\n"+"Valor de Cabecera: "+RCabecera);
-            MostValor3.setText("Texto:"+ga+"\n"+"valor de ETX: "+RETX);
+            MostValor.setText("Valor de STX: "+RSTX+"\n\t"+" Valor de SOH: "+RSOH+"\n");
+            MostValor2.setText("Valor de SYN: "+RBinSYN+"\n"+" Valor de Cabecera: "+RCabecera);
+            MostValor3.setText("Texto: "+limpia(datosArray)+"\n "+" Valor de ETX: "+RETX);
             MostValor4.setText("Valor CRC:  "+ RCRC);
-
+            String to=RBinSYN+","+RSOH+","+RCabecera+","+RSTX+","+limpia(datosArray)+","+RETX+","+RCRC;
+            System.out.println(RBinSYN+","+RSOH+","+RCabecera+","+RSTX+","+limpia(datosArray)+","+RETX+","+RCRC);
+            MostValor5.setText("Trama: "+to);
             cade = null;
 
         }
+    }
+
+    private static String limpia(String datosArray){
+        datosArray = datosArray.trim();
+        if (datosArray != null && datosArray.length() > 0 && datosArray.charAt(datosArray.length() - 1) == ',') {
+            datosArray = datosArray.substring(0, datosArray.length() - 1);
+        }
+        return datosArray;
     }
 }
