@@ -8,4 +8,7 @@
     <string name="SOH">Ingrese SOH en binario</string>
     <string name="STX">Ingrese STX en binario</string>
     <string name="CRC">Ingrese CRC en binario</string>
+    <string name="Direccion">Ingrese Direccion en binario</string>
+    <string name="Control">Ingrese Control en binario</string>
+    <string name="DeteccionError">Ingrese Deteccion de errores en binario</string>
 </resources>
