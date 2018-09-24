@@ -246,8 +246,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             System.out.println("Arreglo total: "+Arrays.toString(Arrtotal));
 
-            MostValor.setText("Valor de STX: "+RSTX+"\n\t"+" Valor de SOH: "+RSOH+"\n");
-            MostValor2.setText("Valor de SYN: "+RBinSYN+"\n"+" Valor de Cabecera: "+RCabecera);
+            MostValor.setText("Valor de SYN: "+RBinSYN+"\n"+" Valor de SOH: "+RSOH);
+            MostValor2.setText(" Valor de Cabecera: "+RCabecera+"Valor de STX: "+RSTX+"\n");
             MostValor3.setText("Texto: "+limpia(datosArray)+"\n "+" Valor de ETX: "+RETX);
             MostValor4.setText("Valor CRC:  "+ RCRC);
             String to=RBinSYN+","+RSOH+","+RCabecera+","+RSTX+","+limpia(datosArray)+","+RETX+","+RCRC;

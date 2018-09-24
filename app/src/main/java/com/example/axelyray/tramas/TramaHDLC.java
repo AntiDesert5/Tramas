@@ -146,9 +146,9 @@ public class TramaHDLC extends AppCompatActivity implements View.OnClickListener
                 System.out.print(Arrtotal[i]);
             }
         }
-        MostValor.setText("Valor de Texto: "+limpia(datosArray));
-        MostValor2.setText("Valor de Direccion: "+RDireccion);
-        MostValor3.setText("Valor de Control: "+RControl);
+        MostValor.setText("Valor de Direccion: "+RDireccion);
+        MostValor2.setText("Valor de Control: "+RControl);
+        MostValor3.setText("Valor de Texto: "+limpia(datosArray));
         MostValor4.setText("Valor de Error: "+RError);
         MostValor5.setText("Trama HDLC: "+"7E"+","+RDireccion+","+RControl+","+limpia(datosArray)+","+RError+","+"7E");
     }
