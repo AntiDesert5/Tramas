@@ -28,6 +28,15 @@
             android:layout_height="wrap_content"
             android:background="#f9020e"
             android:textStyle="bold"/>
+        <Button
+            android:id="@+id/BottonPPP"
+            android:layout_margin="50dp"
+            android:text="Trama PPP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#f9020e"
+            android:textStyle="bold"
+            />
     </LinearLayout>
 
 
