@@ -17,21 +17,31 @@ public class ValorSpinner {
             case 4:
                 return "0027";
             case 5:
-                break;
+                return "0029";
             case 6:
-                break;
+                return "002B";
             case 7:
-                break;
+                return "0231";
             case 8:
-                break;
+                return "0233";
             case 9:
-                break;
+                return "8021";
             case 10:
-                break;
+                return "8023";
             case 11:
-                return;
+                return "8025";
             case 12:
-                return;
+                return "8027";
+            case 13:
+                return "8029";
+            case 14:
+                return "802B";
+            case 15:
+                return "C021";
+            case 16:
+                return "C023";
+            case 17:
+                return "C223";
 
         }
         return "0000";
