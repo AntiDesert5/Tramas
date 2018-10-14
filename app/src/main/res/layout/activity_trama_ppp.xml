@@ -45,9 +45,11 @@
         android:digits="01"
         android:maxLength="16"/>
         <Spinner
+            android:id="@+id/Spinnerdatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-    </Spinner>
+
+        </Spinner>
     <Button
         android:id="@+id/Aceptar1"
         android:layout_width="wrap_content"
@@ -73,6 +75,14 @@
         android:textColor="#000"
         />
 
+        <TextView
+            android:id="@+id/MostVaSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:enabled="false"
+            android:textColor="#000" />
+
     <TextView
         android:id="@+id/MostValor3"
         android:layout_width="wrap_content"
@@ -92,8 +102,7 @@
     <TextView
         android:id="@+id/MostValor5"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:inputType="numberDecimal"
+        android:layout_height="wrap_content"
         android:enabled="false"
         android:textColor="#000"
         />

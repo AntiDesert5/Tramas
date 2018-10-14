@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="datos">
+        <item>Reservado</item>
+        <item>Internet Protocol</item>
+        <item>Osi Network Layer</item>
+        <item>Xerox NS IDP</item>
+        <item>DECnet Phase IV</item>
+        <item>Appletalk</item>
+        <item>Novell IPX</item>
+        <item>Luxcom</item>
+        <item>Sigma Network System</item>
+        <item>Internet Protocol Control Protocol</item>
+        <item>OSI Network Layer Control Protocol</item>
+        <item>Xerox NS IDP Control Protocol</item>
+        <item>DECnet Phase IV Control Protocol</item>
+        <item>Appletalk Control Protocol</item>
+        <item>Novell IPX Control Protocol</item>
+        <item>Link Control Protocol</item>
+        <item>Password Authentication Protocol(PAP)</item>
+        <item>Challenge Handshake Authentication Protocol(CHAP)</item>
+
+
+    </string-array>
+</resources>
