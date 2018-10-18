@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Menu extends AppCompatActivity implements View.OnClickListener {
-    public Button ButtonCRC,ButtonHDLC,ButtonPPP;
+    public Button ButtonCRC, ButtonHDLC, ButtonPPP, ButtonEthernet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,10 +16,12 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         ButtonCRC = (Button)findViewById(R.id.BottonCRC);
         ButtonHDLC = (Button)findViewById(R.id.BottonHDLC);
         ButtonPPP = (Button)findViewById(R.id.BottonPPP);
+        ButtonEthernet = (Button) findViewById(R.id.ButtonEternet);
 
         ButtonCRC.setOnClickListener(this);
         ButtonHDLC.setOnClickListener(this);
         ButtonPPP.setOnClickListener(this);
+        ButtonEthernet.setOnClickListener(this);
     }
 
     public void onClick(View control_pulsado) {
