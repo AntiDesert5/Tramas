@@ -12,31 +12,40 @@
         android:gravity="center"
         android:orientation="vertical">
         <Button
-            android:layout_margin="50dp"
+            android:layout_margin="30dp"
             android:id="@+id/BottonCRC"
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Trama CRC"
-            android:background="#f9020e"
+            android:background="#ffff"
             android:textStyle="bold"/>
         <Button
             android:id="@+id/BottonHDLC"
-            android:layout_margin="50dp"
+            android:layout_margin="30dp"
             android:text="Trama HDLC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#f9020e"
+            android:background="#ffff"
             android:textStyle="bold"/>
         <Button
             android:id="@+id/BottonPPP"
-            android:layout_margin="50dp"
+            android:layout_margin="30dp"
             android:text="Trama PPP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#f9020e"
+            android:background="#ffff"
             android:textStyle="bold"
             />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ButtonEternet"
+            android:layout_margin="30dp"
+            android:text="Trama Ethernet"
+            android:background="#ffff"
+            android:textStyle="bold" />
     </LinearLayout>
 
 

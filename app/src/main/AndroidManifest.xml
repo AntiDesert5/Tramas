@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".Menu" />
         <activity android:name=".TramaHDLC" />
-        <activity android:name=".TramaPPP"></activity>
+        <activity android:name=".TramaPPP" />
+        <activity android:name=".Enthernet"></activity>
     </application>
 
 </manifest>

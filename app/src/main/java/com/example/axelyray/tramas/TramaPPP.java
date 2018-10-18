@@ -164,7 +164,7 @@ public class TramaPPP extends AppCompatActivity implements View.OnClickListener 
         System.out.println("Valor de Spinner: " + valorSpinner);
         MostValor3.setText("Valor de Texto: " + limpia(datosArray));
         MostValor4.setText("Valor de Error: " + RError);
-        MostValor5.setText("Trama HDLC: " + "7E" + "," + RDireccion + "," + RControl + "," + valorSpinner + "," + limpia(datosArray) + "," + RError + "," + "7E");
+        MostValor5.setText("Trama PPP: " + "7E" + "," + RDireccion + "," + RControl + "," + valorSpinner + "," + limpia(datosArray) + "," + RError + "," + "7E");
     }
 
     private static String limpia(String datosArray) {

@@ -25,18 +25,21 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View control_pulsado) {
         switch (control_pulsado.getId()){
             case R.id.BottonCRC:
-                ButtonCRC.setText("funciona");
                 Intent intent = new Intent(Menu.this,MainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.BottonHDLC:
-                ButtonHDLC.setText("Funciona 2");
+
                 Intent intent2 = new Intent(Menu.this,TramaHDLC.class);
                 startActivity(intent2);
                 break;
             case R.id.BottonPPP:
                 Intent intent3 = new Intent(Menu.this,TramaPPP.class);
                 startActivity(intent3);
+                break;
+            case R.id.ButtonEternet:
+                Intent intent4 = new Intent(Menu.this, Enthernet.class);
+                startActivity(intent4);
                 break;
         }
     }
