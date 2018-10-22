@@ -21,22 +21,49 @@
             android:maxLength="20" />
 
         <EditText
-            android:id="@+id/IngDireccion"
+            android:id="@+id/IngPreambulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/Direccion"
+            android:hint="@string/Preambulo"
             android:inputType="number"
             android:digits="01"
             android:maxLength="8" />
 
         <EditText
-            android:id="@+id/IngControl"
+            android:id="@+id/IngDelimitador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/Control"
+            android:hint="@string/delimitador"
             android:inputType="number"
             android:digits="01"
             android:maxLength="8" />
+
+        <EditText
+            android:id="@+id/IngDestino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/DirDestino"
+            android:inputType="numberDecimal"
+            android:digits="01"
+            android:maxLength="6" />
+
+        <EditText
+            android:id="@+id/IngOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/DirOrigen"
+            android:inputType="numberDecimal"
+            android:digits="01"
+            android:maxLength="6" />
+
+        <EditText
+            android:id="@+id/IngLongitud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/Longitud"
+            android:inputType="numberDecimal"
+            android:digits="01"
+            android:maxLength="2" />
 
         <EditText
             android:id="@+id/IngDeteccion"
@@ -45,14 +72,8 @@
             android:hint="@string/DeteccionError"
             android:inputType="numberDecimal"
             android:digits="01"
-            android:maxLength="16" />
+            android:maxLength="4" />
 
-        <Spinner
-            android:id="@+id/Spinnerdatos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </Spinner>
 
         <Button
             android:id="@+id/Aceptar1"
@@ -79,14 +100,6 @@
             android:textColor="#000" />
 
         <TextView
-            android:id="@+id/MostVaSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
             android:id="@+id/MostValor3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,6 +117,34 @@
 
         <TextView
             android:id="@+id/MostValor5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/MostValor9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/MostValor6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/MostValor7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/MostValor8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:enabled="false"

@@ -11,4 +11,10 @@
     <string name="Direccion">Ingrese Direccion en binario</string>
     <string name="Control">Ingrese Control en binario</string>
     <string name="DeteccionError">Ingrese Deteccion de errores en binario</string>
+    <string name="Preambulo">Ingrese Preambulo</string>
+    <string name="delimitador">Ingrese Delimitador</string>
+    <string name="DirDestino">Ingrese Direccion de Destino</string>
+    <string name="DirOrigen">Ingrese Direccion de Origen</string>
+    <string name="Longitud">Ingrese Longitud</string>
+    <string name="DirOrign">Ingrese Direccion de Origen</string>
 </resources>
