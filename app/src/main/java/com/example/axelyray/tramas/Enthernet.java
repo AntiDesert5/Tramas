@@ -35,43 +35,6 @@ public class Enthernet extends AppCompatActivity implements View.OnClickListener
         return false;
     }
 
-    public String BinDireccion(View view) {
-        String val = " ";
-        EditText IngSYN = (EditText) findViewById(R.id.IngPreambulo);
-        String DatSYN = IngSYN.getText().toString();
-        boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 8) {
-            if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
-                System.out.println("Funciona");
-            } else {
-                val = "00";
-            }
-        } else {
-            IngSYN.setText("00000000");
-        }
-        return val;
-    }
-
-    public String BinControl(View view) {
-        String val = " ";
-        EditText IngSYN = (EditText) findViewById(R.id.IngDelimitador);
-        String DatSYN = IngSYN.getText().toString();
-        boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 8) {
-            if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
-                System.out.println("Funciona");
-            } else {
-                val = "00";
-            }
-        } else {
-            IngSYN.setText("00000000");
-        }
-        return val;
-    }
 
     public String BinDestino(View view) {
         String val = " ";
@@ -111,24 +74,6 @@ public class Enthernet extends AppCompatActivity implements View.OnClickListener
         return val;
     }
 
-    public String Binlongitud(View view) {
-        String val = " ";
-        EditText IngSYN = (EditText) findViewById(R.id.IngLongitud);
-        String DatSYN = IngSYN.getText().toString();
-        boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 2) {
-            if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
-                System.out.println("Funciona");
-            } else {
-                val = "00";
-            }
-        } else {
-            IngSYN.setText("00");
-        }
-        return val;
-    }
 
     public String BinCRC(View view) {
         String val = " ";
@@ -174,11 +119,9 @@ public class Enthernet extends AppCompatActivity implements View.OnClickListener
         if (IngValor.getText().toString().isEmpty()) {
             IngValor.setText("Ingrese Frase");
         } else {
-            RDireccion = BinDireccion(view);
-            RControl = BinControl(view);
+
             RDestino = BinDestino(view);
             ROrigen = BinOrigen(view);
-            RLongitud = Binlongitud(view);
             RDeteccion = BinCRC(view);
 
             String cade = IngValor.getText().toString();
@@ -209,14 +152,30 @@ public class Enthernet extends AppCompatActivity implements View.OnClickListener
                 System.out.print(Arrtotal[i]);
             }
         }
-        MostValor.setText("Valor de Preambulo: " + RDireccion);
-        MostValor2.setText("Valor de Control: " + RControl);
+
+        String valorRelleno = "";
+        int num = limpia(datosArray).getBytes().length + ROrigen.getBytes().length + RDestino.getBytes().length;
+        int auxnum = num;
+        if (num < 46) {
+            num = num + 20;
+        }
+        String numexa = Integer.toHexString(num).toUpperCase();
+        valorRelleno = String.valueOf(numexa);
+
+        String valorlong = "";
+        int numlong = limpia(datosArray).getBytes().length + ROrigen.getBytes().length + RDestino.getBytes().length;
+        String numlongstr = Integer.toHexString(num).toUpperCase();
+        valorRelleno = numlongstr;
         MostValor3.setText("Direccion de Destino: " + RDestino);
         MostValor4.setText("Direccion de Destino: " + ROrigen);
-        MostValor5.setText("Longitud: " + RLongitud);
+        MostValor5.setText("Longitud: " + numlongstr);
         MostValor9.setText("Valor de Mensaje: " + limpia(datosArray));
         MostValor6.setText("Valor de Error: " + RDeteccion);
-        MostValor7.setText("Trama Ethernet: " + RDireccion + "," + RControl + "," + RDestino + "," + ROrigen + "," + RLongitud + "," + limpia(datosArray) + "," + RDeteccion);
+        if (auxnum < 46) {
+            MostValor7.setText("Trama Ethernet: " + "AA" + "," + "AB" + "," + RDestino + "," + ROrigen + "," + numlongstr + "," + limpia(datosArray) + "," + valorRelleno + RDeteccion);
+        } else {
+            MostValor7.setText("Trama Ethernet: " + "AA" + "," + "AB" + "," + RDestino + "," + ROrigen + "," + numlongstr + "," + limpia(datosArray) + "," + RDeteccion);
+        }
     }
 
     private static String limpia(String datosArray) {

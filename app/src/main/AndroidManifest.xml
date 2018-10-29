@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="   Trama CRC"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -20,9 +24,27 @@
             </intent-filter>
         </activity>
         <activity android:name=".Menu" />
-        <activity android:name=".TramaHDLC" />
-        <activity android:name=".TramaPPP" />
-        <activity android:name=".Enthernet"></activity>
-    </application>
+        <activity
+            android:name=".TramaHDLC"
+            android:label="   Trama HDLC"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".TramaPPP"
+            android:label="   Trama PPP"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Enthernet"
+            android:label="   Trama Ethernet"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden">
 
+        </activity>
+        <activity
+            android:name=".trama802"
+            android:label="   Trama 802.11"
+            android:configChanges="screenSize|orientation"
+            android:windowSoftInputMode="stateHidden"></activity>
+    </application>
 </manifest>

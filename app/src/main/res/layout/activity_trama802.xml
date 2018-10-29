@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Enthernet">
+    tools:context=".trama802">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,14 +15,35 @@
 
         <EditText
             android:id="@+id/IngValor"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/IngMens"
-            android:maxLength="20" />
+            android:maxLength="20"
+
+            />
+
+        <EditText
+            android:gravity="center"
+            android:id="@+id/IngPreambulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Preambulo"
+            android:inputType="number"
+            android:digits="01"
+            android:maxLength="8" />
+
+        <EditText
+            android:id="@+id/IngDelimitador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/delimitador"
+            android:inputType="number"
+            android:digits="01"
+            android:maxLength="8" />
 
         <EditText
             android:id="@+id/IngDestino"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/DirDestino"
             android:inputType="numberDecimal"
@@ -31,7 +52,7 @@
 
         <EditText
             android:id="@+id/IngOrigen"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/DirOrigen"
             android:inputType="numberDecimal"
@@ -39,8 +60,18 @@
             android:maxLength="6" />
 
         <EditText
+            android:id="@+id/IngLongitud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Longitud"
+            android:inputType="numberDecimal"
+            android:digits="01"
+            android:maxLength="2" />
+
+        <EditText
+            android:gravity="center"
             android:id="@+id/IngDeteccion"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/DeteccionError"
             android:inputType="numberDecimal"
@@ -52,8 +83,8 @@
             android:id="@+id/Aceptar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Theme.AppCompat.Light.NoActionBar"
-            android:text="@string/Aceptar" />
+            android:text="@string/Aceptar"
+            android:inputType="numberDecimal" />
 
 
         <TextView
