@@ -15,11 +15,12 @@
 
         <EditText
             android:id="@+id/IngValor"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/IngMens"
             android:maxLength="20"
-
+            style="@style/stiloEditext"
             />
 
         <EditText
@@ -30,7 +31,8 @@
             android:hint="@string/Preambulo"
             android:inputType="number"
             android:digits="01"
-            android:maxLength="8" />
+            android:maxLength="8"
+            style="@style/stiloEditext" />
 
         <EditText
             android:id="@+id/IngDelimitador"
@@ -39,7 +41,8 @@
             android:hint="@string/delimitador"
             android:inputType="number"
             android:digits="01"
-            android:maxLength="8" />
+            android:maxLength="8"
+            style="@style/stiloEditext" />
 
         <EditText
             android:id="@+id/IngDestino"
@@ -48,7 +51,8 @@
             android:hint="@string/DirDestino"
             android:inputType="numberDecimal"
             android:digits="01"
-            android:maxLength="6" />
+            android:maxLength="6"
+            style="@style/stiloEditext" />
 
         <EditText
             android:id="@+id/IngOrigen"
@@ -57,7 +61,8 @@
             android:hint="@string/DirOrigen"
             android:inputType="numberDecimal"
             android:digits="01"
-            android:maxLength="6" />
+            android:maxLength="6"
+            style="@style/stiloEditext" />
 
         <EditText
             android:id="@+id/IngLongitud"
@@ -66,7 +71,8 @@
             android:hint="@string/Longitud"
             android:inputType="numberDecimal"
             android:digits="01"
-            android:maxLength="2" />
+            android:maxLength="2"
+            style="@style/stiloEditext" />
 
         <EditText
             android:gravity="center"
@@ -76,22 +82,21 @@
             android:hint="@string/DeteccionError"
             android:inputType="numberDecimal"
             android:digits="01"
-            android:maxLength="4" />
+            android:maxLength="4"
+            style="@style/stiloEditext" />
 
 
         <Button
             android:id="@+id/Aceptar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Aceptar"
-            android:inputType="numberDecimal" />
+            android:text="@string/Aceptar" />
 
 
         <TextView
             android:id="@+id/MostValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
             android:textColor="#000" />
 
@@ -99,7 +104,6 @@
             android:id="@+id/MostValor2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
             android:textColor="#000" />
 
@@ -107,7 +111,6 @@
             android:id="@+id/MostValor3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
             android:textColor="#000" />
 
@@ -115,7 +118,6 @@
             android:id="@+id/MostValor4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
             android:textColor="#000" />
 

@@ -41,7 +41,7 @@ public class Enthernet extends AppCompatActivity implements View.OnClickListener
         EditText IngSYN = (EditText) findViewById(R.id.IngDestino);
         String DatSYN = IngSYN.getText().toString();
         boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 6) {
+        if (IngSYN.getText().toString().length() == 12) {
             if (a) {
                 int dec = Integer.parseInt(DatSYN, 2);
                 val = Integer.toHexString(dec).toUpperCase();
@@ -60,16 +60,16 @@ public class Enthernet extends AppCompatActivity implements View.OnClickListener
         EditText IngSYN = (EditText) findViewById(R.id.IngOrigen);
         String DatSYN = IngSYN.getText().toString();
         boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 6) {
+        if (IngSYN.getText().toString().length() == 12) {
             if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
-                System.out.println("Funciona");
+                double dec = Integer.parseInt(DatSYN, 2);
+                val = Double.toHexString(dec).toUpperCase();
+                System.out.println("checaaaa: " + val);
             } else {
                 val = "00";
             }
         } else {
-            IngSYN.setText("0000000000000000");
+            IngSYN.setText("000000000000");
         }
         return val;
     }
@@ -80,10 +80,10 @@ public class Enthernet extends AppCompatActivity implements View.OnClickListener
         EditText IngSYN = (EditText) findViewById(R.id.IngDeteccion);
         String DatSYN = IngSYN.getText().toString();
         boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 4) {
+        if (IngSYN.getText().toString().length() == 32) {
             if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
+                double dec = Integer.parseInt(DatSYN, 2);
+                val = Double.toHexString(dec).toUpperCase();
                 System.out.println("Funciona");
             } else {
                 val = "00";

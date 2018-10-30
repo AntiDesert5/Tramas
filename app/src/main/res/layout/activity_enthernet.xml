@@ -25,18 +25,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/DirDestino"
-            android:inputType="numberDecimal"
-            android:digits="01"
-            android:maxLength="6" />
+            android:digits="0123456789ABCDEF"
+            android:maxLength="12" />
 
         <EditText
             android:id="@+id/IngOrigen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/DirOrigen"
-            android:inputType="numberDecimal"
-            android:digits="01"
-            android:maxLength="6" />
+            android:digits="A B C D E F0123456789"
+            android:maxLength="12" />
 
         <EditText
             android:id="@+id/IngDeteccion"
@@ -45,7 +43,7 @@
             android:hint="@string/DeteccionError"
             android:inputType="numberDecimal"
             android:digits="01"
-            android:maxLength="4" />
+            android:maxLength="32" />
 
 
         <Button
