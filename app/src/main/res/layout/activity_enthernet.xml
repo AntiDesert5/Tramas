@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/DirOrigen"
-            android:digits="A B C D E F0123456789"
+            android:digits="ABCDEF0123456789"
             android:maxLength="12" />
 
         <EditText
@@ -58,7 +58,6 @@
             android:id="@+id/MostValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
             android:textColor="#000" />
 
@@ -66,7 +65,6 @@
             android:id="@+id/MostValor2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
             android:enabled="false"
             android:textColor="#000" />
 
