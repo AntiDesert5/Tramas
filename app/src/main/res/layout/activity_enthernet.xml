@@ -43,7 +43,7 @@
             android:hint="@string/DeteccionError"
             android:inputType="numberDecimal"
             android:digits="01"
-            android:maxLength="32" />
+            android:maxLength="31" />
 
 
         <Button

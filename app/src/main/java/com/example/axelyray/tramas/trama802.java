@@ -106,13 +106,136 @@ public class trama802 extends AppCompatActivity implements View.OnClickListener 
         return val;
     }
 
+    public String BinDire2(View view) {
+        String val = " ";
+        EditText IngSYN = (EditText) findViewById(R.id.IngDireccion2);
+        String DatSYN = IngSYN.getText().toString();
+        boolean a = checaTFCRC(view, IngSYN, DatSYN);
+        if (IngSYN.getText().toString().length() == 6) {
+            if (a) {
+                int dec = Integer.parseInt(DatSYN, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+            } else {
+                val = "00";
+            }
+        } else {
+            IngSYN.setText("000000");
+        }
+        return val;
+    }
+
+    public String BinDire(View view) {
+        String val = " ";
+        EditText IngSYN = (EditText) findViewById(R.id.IngDireccion);
+        String DatSYN = IngSYN.getText().toString();
+        boolean a = checaTFCRC(view, IngSYN, DatSYN);
+        if (IngSYN.getText().toString().length() == 6) {
+            if (a) {
+                int dec = Integer.parseInt(DatSYN, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+            } else {
+                val = "00";
+            }
+        } else {
+            IngSYN.setText("000000");
+        }
+        return val;
+    }
+
+    public String BinDuracion(View view) {
+        String val = " ";
+        EditText IngSYN = (EditText) findViewById(R.id.IngDuracion);
+        String DatSYN = IngSYN.getText().toString();
+        boolean a = checaTFCRC(view, IngSYN, DatSYN);
+        if (IngSYN.getText().toString().length() == 2) {
+            if (a) {
+                int dec = Integer.parseInt(DatSYN, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+            } else {
+                val = "00";
+            }
+        } else {
+            IngSYN.setText("00");
+        }
+        return val;
+    }
+
+    public String BinControl(View view) {
+        String val = " ";
+        EditText IngSYN = (EditText) findViewById(R.id.IngTramControl);
+        String DatSYN = IngSYN.getText().toString();
+        boolean a = checaTFCRC(view, IngSYN, DatSYN);
+        if (IngSYN.getText().toString().length() == 2) {
+            if (a) {
+                int dec = Integer.parseInt(DatSYN, 2);
+                val = Integer.toHexString(dec).toUpperCase();
+            } else {
+                val = "00";
+            }
+        } else {
+            IngSYN.setText("00");
+        }
+        return val;
+    }
+
 
     public void onClick(View view) {
+        int a[];
+        String Arrtotal[];
         EditText ingConTrama = (EditText) findViewById(R.id.IngTramControl);
         EditText fname = (EditText) findViewById(R.id.fname);
+        EditText IngValor = (EditText) findViewById(R.id.IngMensajeCodificar);
         String ContSecu = BinContSecu(view);
+        String datosArray = "";
         String Dir4 = BinDire4(view);
         String RCRC = BinCRC(view);
-        fname.setText("Control de Secuencia: " + ContSecu + "\n" + "Direccion 4: " + Dir4 + "\n" + "CRC: " + RCRC);
+        String Dir3 = BinDire3(view);
+        String Dir2 = BinDire2(view);
+        String Dir = BinDire(view);
+        String Duracion = BinDuracion(view);
+        String Control = BinControl(view);
+
+
+        if (IngValor.getText().toString().isEmpty()) {
+            IngValor.setText("Ingrese Frase");
+        } else {
+            String cade = IngValor.getText().toString();
+            int tam = cade.length();
+            a = new int[tam];
+            Arrtotal = new String[tam];
+
+            for (int x = 0; x < cade.length(); x++) {
+                int tamanio = IngValor.length();
+                System.out.println(cade.charAt(x) + " = " + cade.codePointAt(x));
+                int asc = cade.codePointAt(x);
+                a[x] = asc;
+                //ascci(asc,tamanio);
+            }
+
+            for (int i = 0; i < tam; i++) {
+                int b = a[i];
+                String hexa = Integer.toHexString(b).toUpperCase();
+                Arrtotal[i] = hexa;
+            }
+
+            for (String elemento : Arrtotal) {
+                datosArray += elemento + ",";
+            }
+
+            System.out.println(datosArray);
+            for (int i = 0; i < tam; i++) {
+                System.out.print(Arrtotal[i]);
+            }
+        }
+
+        fname.setText("Datos: " + limpia(datosArray) + "\n" + "Control de Trama: " + Control + "\n" + "ID Duracion: " + Duracion + "\n" + "Direccion 1: " + Dir + "\n" + "Direccion 3: " + Dir3 + "\n" + "Control de Secuencia: " + ContSecu + "\n" + "Direccion 4: " + Dir4 + "\n" + "CRC: " + RCRC);
+    }
+
+    private static String limpia(String datosArray) {
+        datosArray = datosArray.trim();
+        if (datosArray != null && datosArray.length() > 0 && datosArray.charAt(datosArray.length() - 1) == ',') {
+            datosArray = datosArray.substring(0, datosArray.length() - 1);
+        }
+        return datosArray;
     }
 }
