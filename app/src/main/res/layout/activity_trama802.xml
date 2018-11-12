@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/IngValor"
+            android:id="@+id/IngMensajeCodificar"
             android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,50 +25,61 @@
 
         <EditText
             android:gravity="center"
-            android:id="@+id/IngPreambulo"
+            android:id="@+id/IngTramControl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/Preambulo"
+            android:hint="@string/TramControl"
             android:inputType="number"
             android:digits="01"
-            android:maxLength="8"
+            android:maxLength="2"
             style="@style/stiloEditext" />
 
         <EditText
-            android:id="@+id/IngDelimitador"
+            android:gravity="center"
+            android:id="@+id/IngDuracion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/delimitador"
+            android:hint="Ingrese Duracion"
             android:inputType="number"
             android:digits="01"
-            android:maxLength="8"
+            android:maxLength="2"
             style="@style/stiloEditext" />
 
         <EditText
-            android:id="@+id/IngDestino"
+            android:id="@+id/IngDireccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/DirDestino"
+            android:hint="Ingrese Direccion 1"
+            android:inputType="number"
+            android:digits="01"
+            android:maxLength="6"
+            style="@style/stiloEditext" />
+
+        <EditText
+            android:id="@+id/IngDireccion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese Direccion 2"
             android:inputType="numberDecimal"
             android:digits="01"
             android:maxLength="6"
             style="@style/stiloEditext" />
 
         <EditText
-            android:id="@+id/IngOrigen"
+            android:id="@+id/IngDireccion3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/DirOrigen"
+            android:hint="Ingrese Direccion 3"
             android:inputType="numberDecimal"
             android:digits="01"
             android:maxLength="6"
             style="@style/stiloEditext" />
 
         <EditText
-            android:id="@+id/IngLongitud"
+            android:id="@+id/IngContSec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/Longitud"
+            android:hint="Ingrese Control de Secuencia"
             android:inputType="numberDecimal"
             android:digits="01"
             android:maxLength="2"
@@ -76,10 +87,21 @@
 
         <EditText
             android:gravity="center"
-            android:id="@+id/IngDeteccion"
+            android:id="@+id/IngDireccion4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/DeteccionError"
+            android:hint="Ingrese Direccion 4"
+            android:inputType="numberDecimal"
+            android:digits="01"
+            android:maxLength="6"
+            style="@style/stiloEditext" />
+
+        <EditText
+            android:gravity="center"
+            android:id="@+id/IngCRC8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese CRC"
             android:inputType="numberDecimal"
             android:digits="01"
             android:maxLength="4"
@@ -92,69 +114,10 @@
             android:layout_height="wrap_content"
             android:text="@string/Aceptar" />
 
-
-        <TextView
-            android:id="@+id/MostValor"
+        <EditText
+            android:id="@+id/fname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/MostValor2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/MostValor3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/MostValor4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/MostValor5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/MostValor9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/MostValor6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/MostValor7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/MostValor8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:textColor="#000" />
-
+            android:enabled="true" />
     </LinearLayout>
 </ScrollView>

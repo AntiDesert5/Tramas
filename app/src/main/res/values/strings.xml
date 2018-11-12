@@ -17,4 +17,5 @@
     <string name="DirOrigen">Ingrese Direccion de Origen</string>
     <string name="Longitud">Ingrese Longitud</string>
     <string name="DirOrign">Ingrese Direccion de Origen</string>
+    <string name="TramControl">Ingrese Trama de Control</string>
 </resources>
