@@ -56,17 +56,12 @@ public class trama802 extends AppCompatActivity implements View.OnClickListener 
         String val = " ";
         EditText IngSYN = (EditText) findViewById(R.id.IngDireccion4);
         String DatSYN = IngSYN.getText().toString();
-        boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 6) {
-            if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
-            } else {
-                val = "00";
-            }
-        } else {
-            IngSYN.setText("000000");
+        if (DatSYN.isEmpty()) {
+            val = "000000000000";
         }
+        val = DatSYN;
+
+
         return val;
     }
 
@@ -92,17 +87,12 @@ public class trama802 extends AppCompatActivity implements View.OnClickListener 
         String val = " ";
         EditText IngSYN = (EditText) findViewById(R.id.IngDireccion3);
         String DatSYN = IngSYN.getText().toString();
-        boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 6) {
-            if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
-            } else {
-                val = "00";
-            }
-        } else {
-            IngSYN.setText("000000");
+        if (DatSYN.isEmpty()) {
+            val = "000000000000";
         }
+        val = DatSYN;
+
+
         return val;
     }
 
@@ -110,17 +100,10 @@ public class trama802 extends AppCompatActivity implements View.OnClickListener 
         String val = " ";
         EditText IngSYN = (EditText) findViewById(R.id.IngDireccion2);
         String DatSYN = IngSYN.getText().toString();
-        boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 6) {
-            if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
-            } else {
-                val = "00";
-            }
-        } else {
-            IngSYN.setText("000000");
+        if (DatSYN.isEmpty()) {
+            val = "000000000000";
         }
+        val = DatSYN;
         return val;
     }
 
@@ -128,17 +111,12 @@ public class trama802 extends AppCompatActivity implements View.OnClickListener 
         String val = " ";
         EditText IngSYN = (EditText) findViewById(R.id.IngDireccion);
         String DatSYN = IngSYN.getText().toString();
-        boolean a = checaTFCRC(view, IngSYN, DatSYN);
-        if (IngSYN.getText().toString().length() == 6) {
-            if (a) {
-                int dec = Integer.parseInt(DatSYN, 2);
-                val = Integer.toHexString(dec).toUpperCase();
-            } else {
-                val = "00";
-            }
-        } else {
-            IngSYN.setText("000000");
+        if (DatSYN.isEmpty()) {
+            val = "000000000000";
         }
+        val = DatSYN;
+
+
         return val;
     }
 
@@ -183,6 +161,7 @@ public class trama802 extends AppCompatActivity implements View.OnClickListener 
         int a[];
         String Arrtotal[];
         EditText ingConTrama = (EditText) findViewById(R.id.IngTramControl);
+        EditText RES = (EditText) findViewById(R.id.RES);
         EditText fname = (EditText) findViewById(R.id.fname);
         EditText IngValor = (EditText) findViewById(R.id.IngMensajeCodificar);
         String ContSecu = BinContSecu(view);
@@ -228,7 +207,8 @@ public class trama802 extends AppCompatActivity implements View.OnClickListener 
             }
         }
 
-        fname.setText("Datos: " + limpia(datosArray) + "\n" + "Control de Trama: " + Control + "\n" + "ID Duracion: " + Duracion + "\n" + "Direccion 1: " + Dir + "\n" + "Direccion 3: " + Dir3 + "\n" + "Control de Secuencia: " + ContSecu + "\n" + "Direccion 4: " + Dir4 + "\n" + "CRC: " + RCRC);
+        fname.setText("Datos: " + limpia(datosArray) + "\n" + "Control de Trama: " + Control + "\n" + "ID Duracion: " + Duracion + "\n" + "Direccion 1: " + Dir + "\n" + "Direccion 2: " + Dir2 + "\n" + "Direccion 3: " + Dir3 + "\n" + "Control de Secuencia: " + ContSecu + "\n" + "Direccion 4: " + Dir4 + "\n" + "CRC: " + RCRC);
+        RES.setText("Trama: " + Control + Duracion + Dir + Dir2 + Dir3 + ContSecu + Dir4 + RCRC);
     }
 
     private static String limpia(String datosArray) {

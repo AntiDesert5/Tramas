@@ -50,9 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ingrese Direccion 1"
-            android:inputType="number"
-            android:digits="01"
-            android:maxLength="6"
+            android:digits="0123456789ABCDEF"
+            android:maxLength="12"
             style="@style/stiloEditext" />
 
         <EditText
@@ -60,9 +59,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ingrese Direccion 2"
-            android:inputType="numberDecimal"
-            android:digits="01"
-            android:maxLength="6"
+
+            android:digits="0123456789ABCDEF"
+            android:maxLength="12"
             style="@style/stiloEditext" />
 
         <EditText
@@ -70,9 +69,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ingrese Direccion 3"
-            android:inputType="numberDecimal"
-            android:digits="01"
-            android:maxLength="6"
+
+            android:digits="0123456789ABCDEF"
+            android:maxLength="12"
             style="@style/stiloEditext" />
 
         <EditText
@@ -91,9 +90,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ingrese Direccion 4"
-            android:inputType="numberDecimal"
-            android:digits="01"
-            android:maxLength="6"
+
+            android:digits="0123456789ABCDEF"
+            android:maxLength="12"
             style="@style/stiloEditext" />
 
         <EditText
@@ -118,6 +117,14 @@
             android:id="@+id/fname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="true" />
+            android:textColor="#000"
+            android:enabled="false" />
+
+        <EditText
+            android:id="@+id/RES"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:enabled="false" />
     </LinearLayout>
 </ScrollView>
